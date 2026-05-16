@@ -1,0 +1,153 @@
+
+# Speaking Lab Game — UI Surgery Prompt
+
+**Read every instruction completely before touching any file. Any violation of the constraints below will result in immediate rejection of the delivery.**
+
+---
+
+## REPOSITORY
+
+Frontend: `https://github.com/Daravuth999/Speaking-Lab-Game.git`
+Backend: `https://github.com/Daravuth999/eduhub-backend.git`
+Live URL: `https://game.daravuthenglish.online`
+
+---
+
+## SYSTEM OVERVIEW
+
+This is a standalone Vite + React game deployed on Vercel. It talks to a shared FastAPI backend on Render at `https://eduhub-backend-td3a.onrender.com`. The same backend serves the EduHub PWA at `https://daravuthenglish.online` — do not break it.
+
+---
+
+## LOCKED FILES — DO NOT TOUCH UNDER ANY CIRCUMSTANCES
+
+These files are verified correct. Any modification to them will corrupt the system. Do not read them for ideas. Do not refactor them. Do not rename anything inside them.
+
+```
+src/auth/AuthCallback.jsx
+src/auth/AuthProvider.jsx
+src/auth/LoginPage.jsx
+src/auth/ProtectedRoute.jsx
+src/auth/useAuth.js
+src/main.jsx
+src/lib/utils.js
+src/hooks/use-toast.js
+src/components/Toaster.jsx
+src/components/ui/button.jsx
+src/components/ui/card.jsx
+src/components/ui/checkbox.jsx
+src/components/ui/input.jsx
+src/components/ui/label.jsx
+src/components/ui/select.jsx
+src/components/ui/tabs.jsx
+src/speakinglab/hooks/useSpeakingLabAuth.js
+src/speakinglab/hooks/speakingLabApi.js
+src/speakinglab/speakinglab-theme.css
+src/speakinglab/components/LiveRosterGate.jsx
+src/speakinglab/components/JoinGamePanel.jsx
+tailwind.config.js
+vite.config.js
+vercel.json
+package.json
+index.html
+public/manifest.webmanifest
+public/icons/icon-192.png
+public/icons/icon-512.png
+```
+
+---
+
+## SURGERY TASKS
+
+> _(Fill in what you want changed below. Be specific — component name, exact behavior, exact text if relevant.)_
+
+### Surgery 1 — [Component name here]
+**What to change:**
+[Describe exactly what should change]
+
+**Expected result:**
+[Describe what it should look like or do after the fix]
+
+---
+
+### Surgery 2 — [Component name here]
+**What to change:**
+[Describe exactly what should change]
+
+**Expected result:**
+[Describe what it should look like or do after the fix]
+
+---
+
+### Surgery 3 — [Component name here]
+**What to change:**
+[Describe exactly what should change]
+
+**Expected result:**
+[Describe what it should look like or do after the fix]
+
+---
+
+_(Add more surgery blocks as needed)_
+
+---
+
+## HARD CONSTRAINTS
+
+- **Read the file before editing it.** Do not assume content.
+- **Surgical changes only.** Change the minimum number of lines to achieve the requested result. Do not reformat, reorder, or refactor surrounding code.
+- **No new npm packages.** Use only what is already in `package.json`.
+- **No new files** unless a surgery explicitly requires a new component.
+- **All CSS must use classes already defined in `speakinglab-theme.css`** or standard Tailwind utilities already in `tailwind.config.js`. Do not add inline styles or new CSS classes.
+- **Do not modify the backend** unless a surgery explicitly requires it.
+- **Do not touch any locked file** listed above for any reason.
+- **Do not modify `App.jsx`** unless a surgery explicitly requires a new route.
+- **Do not rename, move, or delete any existing file.**
+- **Run `npm run build` locally** after all changes. Fix any build errors before delivering. Do not deliver a zip that does not build cleanly.
+
+---
+
+## VERIFICATION CHECKLIST
+
+Before packaging the delivery, confirm every item:
+
+```
+[ ] npm run build passes with zero errors
+[ ] Every locked file is byte-identical to the input
+[ ] No new npm dependencies added to package.json
+[ ] No new CSS classes added outside speakinglab-theme.css
+[ ] Each surgery produces exactly the described expected result
+[ ] No console errors introduced
+[ ] Auth flow unchanged — login still works
+[ ] Game popup still appears when slot stops
+[ ] Live entry gate still works
+[ ] Points grant still fires push notification
+```
+
+---
+
+## DELIVERY FORMAT
+
+**Deliver one single ZIP file** containing the complete updated `speaking-lab-game` folder. The ZIP must include every file — not just changed files. The person receiving it will extract and push to GitHub directly without merging anything manually.
+
+Inside the ZIP root, include a plain text file called `CHANGES.txt` listing:
+- Every file that was modified
+- One sentence describing what changed in each file
+- Confirmation that `npm run build` passed
+
+**Do not deliver:**
+- Patch files
+- Diff files
+- Multiple ZIPs
+- A ZIP containing only changed files
+- Code blocks pasted in chat instead of a downloadable file
+
+---
+
+## EFFICIENCY RULES
+
+- Do not ask clarifying questions unless a surgery is genuinely ambiguous. Use the constraints above to resolve ambiguity yourself.
+- Do not explain what you are about to do before doing it. Read, change, verify, deliver.
+- Do not summarize the existing codebase back to the user.
+- Do not list files you read. Just deliver the result.
+- One round only — read everything needed, apply all surgeries, verify, deliver the ZIP.
